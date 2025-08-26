@@ -10,58 +10,45 @@
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0ea5e9" />
   <style>
-    :root{
-      --bg1:#0ea5e9; /* sky */
-      --bg2:#a855f7; /* purple */
-      --bg3:#22d3ee; /* cyan */
-      --ink:#0f172a; /* slate-900 */
-      --ink-soft:#334155; /* slate-600 */
-      --card:#ffffff;
-      --glow: 0 20px 60px rgba(14,165,233,.25), 0 10px 30px rgba(168,85,247,.2);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", system-ui, sans-serif;
+    :root{ --bg1:#0ea5e9; --bg2:#a855f7; --bg3:#22d3ee; --ink:#0f172a; --ink-soft:#334155; --card:#ffffff;
+           --glow: 0 20px 60px rgba(14,165,233,.25), 0 10px 30px rgba(168,85,247,.2); }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, system-ui, sans-serif;
       color:var(--ink);
       background: radial-gradient(1200px 900px at 10% 10%, rgba(34,211,238,.25), transparent 60%),
                   radial-gradient(1000px 800px at 90% 30%, rgba(168,85,247,.2), transparent 60%),
                   linear-gradient(135deg, #f8fafc, #eef2ff 70%);
-      display:flex; flex-direction:column; min-height:100vh; align-items:center;
-    }
+      display:flex; flex-direction:column; min-height:100vh; align-items:center; }
     .wrap{flex:1; width:100%; max-width:1200px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center}
-
-    header{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:20px 24px}
+    header{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:20px 24px; text-align:center}
     .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
-    .logo{width:48px; height:48px; border-radius:12px; background:conic-gradient(from 180deg at 50% 50%, var(--bg1), var(--bg2), var(--bg3), var(--bg1)); box-shadow:var(--glow)}
-    .brand .name{font-weight:900; letter-spacing:.2px; font-size:2rem; background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent}
-
+    .logo{width:52px; height:52px; border-radius:14px; background:conic-gradient(from 180deg at 50% 50%, var(--bg1), var(--bg2), var(--bg3), var(--bg1)); box-shadow:0 6px 18px rgba(14,165,233,.35); flex-shrink:0}
+    .brand-text{display:flex; flex-direction:column; align-items:flex-start}
+    .brand .name{font-weight:900; letter-spacing:.2px; font-size:2.8rem; background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent;}
+    .brand .subtext{font-size:1.2rem; font-weight:600; color:#1e293b; margin-top:2px;}
+    .badge{display:inline-block; margin-top:8px; padding:8px 16px; font-size:1.05rem; font-weight:700; color:#0ea5e9; background:rgba(14,165,233,0.12); border:1px solid #0ea5e9; border-radius:999px; text-transform:uppercase; letter-spacing:1px; transition: all 0.25s ease;}
+    .badge:hover{background:rgba(14,165,233,0.2); box-shadow:0 0 12px rgba(14,165,233,0.4); cursor:pointer;}
     .hero{flex:1; margin:32px auto; padding:0 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:36px}
     h1{font-size:clamp(2rem, 4vw + 1rem, 3.5rem); line-height:1.2; margin:0 0 14px}
     .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; background:rgba(14,165,233,.12); color:#0369a1; font-weight:600; font-size:.9rem; margin-bottom:12px}
     .lead{font-size:1.1rem; color:var(--ink-soft); max-width:700px; margin:0 auto}
-
     .panel{background:var(--card); border-radius:18px; box-shadow:var(--glow); padding:22px; margin:20px auto; max-width:600px}
     .count{display:flex; gap:10px; margin:12px 0 0; justify-content:center}
     .pill{flex:1; min-width:80px; background:linear-gradient(135deg,var(--bg1),var(--bg2)); color:white; border-radius:14px; padding:14px 10px; text-align:center; box-shadow:0 6px 12px rgba(0,0,0,.15)}
     .pill .n{font-size:1.6rem; font-weight:800; display:block}
     .pill .l{font-size:.75rem; opacity:.95; text-transform:uppercase; letter-spacing:.5px}
-
     form.notify{display:flex; justify-content:center; gap:10px; margin-top:16px}
     .notify input{flex:1 1 auto; max-width:280px; padding:13px 14px; border-radius:12px; border:1px solid #e5e7eb; outline:none; font:inherit}
     .notify input:focus{border-color:#60a5fa; box-shadow:0 0 0 4px rgba(96,165,250,.25)}
     .notify button{padding:13px 20px; border:0; border-radius:12px; background:linear-gradient(135deg, var(--bg1), var(--bg2)); color:white; font-weight:700; cursor:pointer}
     .small{font-size:.8rem; color:var(--ink-soft); margin-top:6px}
-
     .cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-top:24px; text-align:left; justify-content:center}
     .card{background:rgba(255,255,255,.7); backdrop-filter:saturate(140%) blur(8px); border:1px solid rgba(15,23,42,.06); border-radius:16px; padding:16px; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
-    .card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(2,6,23,.08); border-color:rgba(14,165,233,.25)}
+    .card:hover{transform:translateY(-4px); box-shadow:0 16px 36px rgba(2,6,23,.12), 0 6px 18px rgba(14,165,233,.18); border-color:rgba(14,165,233,.35);} 
     .card .head{display:flex; align-items:center; gap:10px; margin:0 0 8px}
-    .card .ico{width:30px; height:30px; border-radius:10px; background:linear-gradient(135deg, var(--bg1), var(--bg2)); color:#fff; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(14,165,233,.25)}
+    .card .ico{width:30px; height:30px; border-radius:10px; background:linear-gradient(135deg, var(--bg1), var(--bg2)); color:#fff; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(14,165,233,.25); transition: transform .18s ease, box-shadow .18s ease;}
     .card .ico svg{width:18px; height:18px; stroke:currentColor}
-    .card h3{margin:0; font-size:1.05rem}
-    .card p{margin:4px 0 0; color:var(--ink-soft); font-size:.92rem}
-
+    .card:hover .ico{ transform: translateY(-2px) scale(1.08); box-shadow:0 10px 22px rgba(14,165,233,.35);} 
     footer{margin:24px auto; padding:0 24px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center}
     .footer-brand{font-weight:700; background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent; margin-bottom:12px}
     .social{display:flex; justify-content:center; gap:10px; margin-top:12px}
@@ -74,15 +61,18 @@
     <header aria-label="Site header">
       <a class="brand" href="#" aria-label="Deedline AI home">
         <span class="logo" aria-hidden="true"></span>
-        <span class="name">Deedline AI</span>
+        <div class="brand-text">
+          <span class="name">Deedline AI</span>
+          <div class="subtext">by Canko Inc.</div>
+          <span class="badge" aria-label="Status badge">Launching Soon</span>
+        </div>
       </a>
-      <span class="badge" aria-label="Status badge">Launching Soon</span>
     </header>
 
     <main class="hero" aria-label="Main content">
       <section>
         <div class="tag">AI-powered Contracts & Project Ops</div>
-        <h1>We’re building the platform that levels the playing filed in contracts delivery</h1>
+        <h1>We’re building the platform that levels the playing field in contracts delivery</h1>
         <p class="lead">Deedline AI provides the building blocks for creating, negotiating, and managing contracts — enabling structured collaboration with compliance-first RBAC and data residency controls.</p>
 
         <div class="panel" aria-live="polite">
@@ -100,20 +90,19 @@
           </form>
           <div class="small">We’ll only email about launch and early access. No spam.</div>
         </div>
-
         <div class="cards">
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M3 7h18"/><path d="M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><rect x="3" y="7" width="18" height="12" rx="2"/></svg></span><h3>Repository</h3></div><p>Secure storage with metadata-driven classification, OCR, version control, and role-based access to all contract records.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg></span><h3>Contracts Compendium</h3></div><p>Transform agreements into structured elements and attributes. Trace obligations, clauses, and dependencies like BIM for contracts.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9"/><polyline points="21 3 21 12 12 12"/></svg></span><h3>Change Orders</h3></div><p>Initiate, review, and approve change requests with full audit trail, cost/time impact integration, and cross-linking to events.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M7 20h10"/><path d="M6 8h12l-1 9H7L6 8Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></span><h3>Claims & Disputes</h3></div><p>Log claims, disputes, and REAs. Attach evidence, track entitlement, and integrate with schedule and cost analytics.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="21,7 12,13 3,7"/></svg></span><h3>Correspondence</h3></div><p>Centralized hub for structured memos, letters, and MoMs with templates, compendium links, and audit-ready communication.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h3>Schedule Analytics</h3></div><p>Integrate with P6 schedules, highlight path impacts, run delay analyses, and connect directly to claims and change management.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7v10"/></svg></span><h3>Payment Applications</h3></div><p>Automate SOV tracking, validate pay apps, integrate with ERP/ACH, and maintain compliance with lien waivers and approvals.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M10.29 3.86L1.82 12.34a4 4 0 1 0 5.66 5.66l8.48-8.48a4 4 0 1 1 5.66 5.66L14.1 22.14"/></svg></span><h3>Risk & Opportunities</h3></div><p>Track risks and opportunities with AI-assisted scoring, Monte Carlo simulations, and proactive mitigation planning.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M4 13a4 4 0 0 1 8 0v6H4v-6Z"/><path d="M12 13a4 4 0 0 1 8 0v6h-8v-6Z"/></svg></span><h3>Front-end Negotiation</h3></div><p>Draft and negotiate prime, subcontract, and supplemental agreements using smart templates, clause libraries, and collaboration tools.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M8 7h8"/><path d="M6 3h12v18H6z"/></svg></span><h3>Legal Review & Approvals</h3></div><p>AI-assisted redlines, clause risk scoring, playbooks, and routed approvals with signature readiness checks.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s7-4 7-10V5l-7-3-7 3v7c0 6 7 10 7 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Compliance & Governance</h3></div><p>Map obligations to policies and frameworks (GDPR, SOC 2, public sector). Retention, legal hold, RBAC, and full audit trails.</p></div>
-          <div class="card"><div class="head"><span class="ico"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M7 7V5h10v2"/></svg></span><h3>Outside Counsel Workspace</h3></div><p>Secure collaboration with external counsel: scoped data rooms, evidence exchange, tasks, and billing artifacts.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M3 7h18'/><path d='M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2'/><rect x='3' y='7' width='18' height='12' rx='2'/></svg></span><h3>Repository</h3></div><p>Secure storage with metadata-driven classification, OCR, version control, and role-based access to all contract records.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><rect x='3' y='4' width='18' height='4' rx='1'/><rect x='3' y='10' width='18' height='4' rx='1'/><rect x='3' y='16' width='18' height='4' rx='1'/></svg></span><h3>Contracts Compendium</h3></div><p>Transform agreements into structured elements and attributes. Trace obligations, clauses, and dependencies like BIM for contracts.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M21 12a9 9 0 1 1-9-9'/><polyline points='21 3 21 12 12 12'/></svg></span><h3>Change Orders</h3></div><p>Initiate, review, and approve change requests with full audit trail, cost/time impact integration, and cross-linking to events.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M7 20h10'/><path d='M6 8h12l-1 9H7L6 8Z'/><path d='M8 8V6a4 4 0 0 1 8 0v2'/></svg></span><h3>Claims & Disputes</h3></div><p>Log claims, disputes, and REAs. Attach evidence, track entitlement, and integrate with schedule and cost analytics.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><rect x='3' y='5' width='18' height='14' rx='2'/><polyline points='21,7 12,13 3,7'/></svg></span><h3>Correspondence</h3></div><p>Centralized hub for structured memos, letters, and MoMs with templates, compendium links, and audit-ready communication.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/></svg></span><h3>Schedule Analytics</h3></div><p>Integrate with P6 schedules, highlight path impacts, run delay analyses, and connect directly to claims and change management.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><rect x='2' y='7' width='20' height='10' rx='2'/><path d='M6 7v10'/></svg></span><h3>Payment Applications</h3></div><p>Automate SOV tracking, validate pay apps, integrate with ERP/ACH, and maintain compliance with lien waivers and approvals.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M10.29 3.86L1.82 12.34a4 4 0 1 0 5.66 5.66l8.48-8.48a4 4 0 1 1 5.66 5.66L14.1 22.14'/></svg></span><h3>Risk & Opportunities</h3></div><p>Track risks and opportunities with AI-assisted scoring, Monte Carlo simulations, and proactive mitigation planning.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M4 13a4 4 0 0 1 8 0v6H4v-6Z'/><path d='M12 13a4 4 0 0 1 8 0v6h-8v-6Z'/></svg></span><h3>Front-end Negotiation</h3></div><p>Draft and negotiate prime, subcontract, and supplemental agreements using smart templates, clause libraries, and collaboration tools.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M8 7h8'/><path d='M6 3h12v18H6z'/></svg></span><h3>Legal Review & Approvals</h3></div><p>AI-assisted redlines, clause risk scoring, playbooks, and routed approvals with signature readiness checks.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><path d='M12 22s7-4 7-10V5l-7-3-7 3v7c0 6 7 10 7 10Z'/><path d='m9 12 2 2 4-4'/></svg></span><h3>Compliance & Governance</h3></div><p>Map obligations to policies and frameworks (GDPR, SOC 2, public sector). Retention, legal hold, RBAC, and full audit trails.</p></div>
+          <div class="card"><div class="head"><span class="ico"><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2'><rect x='2' y='7' width='20' height='14' rx='2'/><path d='M7 7V5h10v2'/></svg></span><h3>Outside Counsel Workspace</h3></div><p>Secure collaboration with external counsel: scoped data rooms, evidence exchange, tasks, and billing artifacts.</p></div>
         </div>
 
         <div class="panel" style="margin-top:32px; border-top:1px solid #e5e7eb; padding-top:16px">
@@ -124,17 +113,13 @@
 
     <footer>
       <div class="footer-brand">© <span id="y"></span> Canko Inc. All rights reserved.</div>
-      <nav class="social">
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noreferrer noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
+      <nav class="social" style="justify-content:center;">
         <a href="mailto:hello@canko.co" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </nav>
     </footer>
   </div>
-
   <script>
     (function(){
       const target = new Date('2026-02-20T00:00:00');

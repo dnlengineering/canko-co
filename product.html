@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product — Deedline AI</title>
+  <meta name="description" content="Deedline AI connects contracts, project records, commercial workflows, and evidence through one Digital Contract Model." />
+  <meta property="og:title" content="Product — Deedline AI" />
+  <meta property="og:description" content="One platform for connected contract and commercial intelligence." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    :root {
+      --night:#07111f; --night-soft:#0c1a2e; --cyan:#22d3ee; --blue:#0ea5e9;
+      --violet:#a855f7; --ink:#0f172a; --muted:#506078; --line:rgba(15,23,42,.11);
+      --paper:#f8fafc; --white:#fff; --gradient:linear-gradient(125deg,var(--cyan),var(--blue) 46%,var(--violet));
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .shell { width:min(1120px,calc(100% - 40px)); margin:0 auto; }
+    header { position:absolute; inset:0 0 auto; z-index:5; padding:24px 0; color:var(--white); }
+    nav,.brand,.nav-links { display:flex; align-items:center; }
+    nav { justify-content:space-between; }
+    .brand { gap:12px; color:var(--white); font-weight:850; text-decoration:none; }
+    .mark { width:34px; height:34px; object-fit:contain; filter:drop-shadow(0 7px 12px rgba(34,211,238,.26)); }
+    .brand small { display:block; margin-top:1px; color:#9fb1c8; font-size:.64rem; font-weight:650; }
+    .nav-links { gap:22px; }
+    .nav-link { padding-bottom:4px; border-bottom:1px solid rgba(255,255,255,.4); color:#d8e4f1; font-size:.86rem; text-decoration:none; }
+    .hero { position:relative; overflow:hidden; padding:170px 0 110px; color:var(--white); background:radial-gradient(700px 450px at 80% 20%,rgba(168,85,247,.22),transparent 68%),radial-gradient(620px 480px at 12% 80%,rgba(14,165,233,.18),transparent 70%),var(--night); }
+    .hero::after { content:""; position:absolute; inset:0; opacity:.25; background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(to bottom,black,transparent); }
+    .hero-copy { position:relative; z-index:1; max-width:900px; }
+    .eyebrow { margin:0 0 18px; color:var(--cyan); font-size:.76rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(3.2rem,7vw,6.3rem); font-weight:850; letter-spacing:-.065em; line-height:.94; }
+    .gradient-text { color:var(--blue); background:var(--gradient); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .lead { max-width:720px; margin:28px 0 0; color:#b9c8db; font-size:clamp(1.08rem,1.7vw,1.28rem); line-height:1.7; }
+    section { padding:105px 0; }
+    .intro { background:var(--white); }
+    .intro-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:90px; align-items:start; }
+    h2 { margin:0; font-size:clamp(2.3rem,5vw,4.2rem); letter-spacing:-.055em; line-height:1.02; }
+    .section-lead { margin:0; color:var(--muted); font-size:1.06rem; line-height:1.8; }
+    .model { margin-top:34px; padding:24px; border-left:3px solid var(--blue); background:linear-gradient(90deg,#edf8fc,transparent); color:var(--ink); line-height:1.7; }
+    .capabilities { background:linear-gradient(180deg,#f1f6fb,var(--paper)); }
+    .section-head { max-width:760px; }
+    .section-head .eyebrow { color:#087da4; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:58px; }
+    .card { min-height:280px; padding:30px; border:1px solid var(--line); border-radius:18px; background:var(--white); }
+    .card span { color:var(--blue); font-size:.7rem; font-weight:850; letter-spacing:.12em; }
+    .card h3 { margin:54px 0 13px; font-size:1.2rem; letter-spacing:-.025em; }
+    .card p { margin:0; color:var(--muted); font-size:.91rem; line-height:1.68; }
+    .flow { color:var(--white); background:var(--night); }
+    .flow .section-head { max-width:850px; }
+    .flow-steps { display:grid; grid-template-columns:repeat(4,1fr); margin-top:58px; border:1px solid rgba(255,255,255,.1); border-radius:20px; overflow:hidden; }
+    .step { min-height:210px; padding:28px; border-right:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.025); }
+    .step:last-child { border-right:0; }
+    .step b { color:var(--cyan); font-size:.7rem; letter-spacing:.12em; }
+    .step h3 { margin:54px 0 10px; font-size:1.04rem; }
+    .step p { margin:0; color:#91a5bd; font-size:.86rem; line-height:1.6; }
+    .cta { padding:100px 0; text-align:center; background:var(--white); }
+    .cta h2 { max-width:790px; margin:0 auto; }
+    .cta p { max-width:610px; margin:24px auto 30px; color:var(--muted); line-height:1.75; }
+    .button { display:inline-flex; min-height:50px; padding:0 22px; align-items:center; justify-content:center; border-radius:10px; background:var(--gradient); color:var(--white); font-size:.9rem; font-weight:800; text-decoration:none; }
+    footer { padding:30px 0; color:#718096; background:var(--night); font-size:.78rem; }
+    footer .shell { display:flex; justify-content:space-between; gap:20px; }
+    footer a { text-decoration:none; }
+    @media (max-width:900px) {
+      .intro-grid { grid-template-columns:1fr; gap:35px; }
+      .grid { grid-template-columns:1fr 1fr; }
+      .flow-steps { grid-template-columns:1fr 1fr; }
+      .step:nth-child(2) { border-right:0; }
+      .step:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.1); }
+    }
+    @media (max-width:620px) {
+      .shell { width:min(100% - 28px,1120px); }
+      .nav-links .nav-link:last-child { display:none; }
+      .hero { padding:140px 0 80px; }
+      h1 { font-size:clamp(3rem,16vw,4.3rem); }
+      section { padding:76px 0; }
+      .grid,.flow-steps { grid-template-columns:1fr; }
+      .step { border-right:0; border-bottom:1px solid rgba(255,255,255,.1); }
+      .step:last-child { border-bottom:0; }
+      footer .shell { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <img class="mark" src="deedline-mark.png" alt="" width="34" height="34" />
+        <span>Deedline AI<small>by Canko Inc.</small></span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Company</a>
+        <a class="nav-link" href="mailto:hello@canko.co?subject=Deedline%20AI%20product%20conversation">Start a conversation ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-copy">
+        <p class="eyebrow">The product</p>
+        <h1>Every project begins with a contract. <span class="gradient-text">Every process should too.</span></h1>
+        <p class="lead">Deedline AI gives project teams one connected environment to understand agreements, administer commercial workflows, and protect contractual rights and obligations.</p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="shell intro-grid">
+        <div>
+          <p class="eyebrow" style="color:#087da4">One connected foundation</p>
+          <h2>From static documents to a living contract model.</h2>
+        </div>
+        <div>
+          <p class="section-lead">Deedline structures contracts into reusable Digital Contract Elements™ and connects them with the records created throughout project delivery. Every agreement, event, decision, and supporting document stays linked to its contractual context.</p>
+          <div class="model"><strong>Digital Contract Model™</strong><br />A shared commercial foundation connecting prime contracts, downstream agreements, correspondence, changes, schedules, payments, risks, and claims.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Core capabilities</p>
+          <h2>One platform across the contract lifecycle.</h2>
+        </div>
+        <div class="grid">
+          <article class="card"><span>01 / AGREEMENTS</span><h3>Contract ecosystem</h3><p>Manage prime contracts, subcontracts, supplier, consulting, service, and purchase agreements in connected workspaces.</p></article>
+          <article class="card"><span>02 / RECORDS</span><h3>Intelligent repository</h3><p>Centralize project records with version history, document intelligence, natural-language search, and complete lineage.</p></article>
+          <article class="card"><span>03 / ADMINISTRATION</span><h3>Project collaboration</h3><p>Coordinate correspondence, approvals, notices, meetings, and responsibilities through controlled, auditable workflows.</p></article>
+          <article class="card"><span>04 / COMMERCIALS</span><h3>Change and payment</h3><p>Connect scope, cost, time, approvals, and supporting evidence across change orders and payment applications.</p></article>
+          <article class="card"><span>05 / RISK</span><h3>Claims and performance</h3><p>Link schedules, risks, events, entitlement, and evidence to identify exposure earlier and build defensible records.</p></article>
+          <article class="card"><span>06 / GOVERNANCE</span><h3>AI with control</h3><p>Apply AI-assisted drafting, summaries, search, and analysis within role-based access and traceable decision workflows.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Connected by design</p>
+          <h2>Commercial context follows the work from agreement to outcome.</h2>
+        </div>
+        <div class="flow-steps">
+          <article class="step"><b>01</b><h3>Structure</h3><p>Turn contract language into accessible obligations, rights, milestones, and dependencies.</p></article>
+          <article class="step"><b>02</b><h3>Administer</h3><p>Run project communications and commercial processes from the governing agreement.</p></article>
+          <article class="step"><b>03</b><h3>Connect</h3><p>Preserve relationships across documents, events, schedules, cost, decisions, and evidence.</p></article>
+          <article class="step"><b>04</b><h3>Understand</h3><p>Use connected intelligence to surface risk, accelerate decisions, and protect project value.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="shell">
+        <p class="eyebrow" style="color:#087da4">Deedline AI</p>
+        <h2>A contractual foundation for connected project delivery.</h2>
+        <p>We are building for complex projects where commercial clarity, collaboration, and defensible records matter.</p>
+        <a class="button" href="mailto:hello@canko.co?subject=Deedline%20AI%20product%20conversation">Start a conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <span>© <span id="year"></span> Canko Inc. All rights reserved.</span>
+      <a href="mailto:hello@canko.co">hello@canko.co</a>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
